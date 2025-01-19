@@ -8,20 +8,6 @@ require 'keymaps.keymaps'
 
 require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  -- See `:help gitsigns` to understand what the configuration keys do
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
-    'lewis6991/gitsigns.nvim',
-    opts = {
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
-    },
-  },
-
   require 'plugins.which_key',
   require 'plugins.telescope',
 
@@ -34,7 +20,7 @@ require('lazy').setup({
   require 'plugins.colorscheme',
   require 'plugins.todo_comments',
   require 'plugins.mini',
-  --require 'plugins.plugins.debug',
+  require 'plugins.debug',
   require 'plugins.tree_parser',
   require 'plugins.indent_line',
   require 'plugins.lint',
