@@ -7,33 +7,38 @@ require 'options.vim_opt'
 require 'keymaps.keymaps'
 
 require('lazy').setup({
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  require 'plugins.which_key',
+  require 'plugins.sleuth',
+  require 'plugins.which-key',
   require 'plugins.telescope',
 
   require 'plugins.lsp.lazydev',
-  require 'plugins.lsp.luvit',
-  require 'plugins.lsp.config',
+  require 'plugins.lsp.luvit-meta',
+  require 'plugins.lsp.lspconfig',
 
   require 'plugins.conform',
-  require 'plugins.completion',
-  require 'plugins.colorscheme',
-  require 'plugins.todo_comments',
-  require 'plugins.mini',
-  require 'plugins.debug',
-  require 'plugins.tree_parser',
-  require 'plugins.indent_line',
+  require 'plugins.cmp',
+  require 'plugins.indent-blankline',
   require 'plugins.lint',
   require 'plugins.autopairs',
-  require 'plugins.neo-tree',
+
+  require 'plugins.tokyonight',
+  require 'plugins.todo-comments',
+
+  require 'plugins.mini',
+  --require 'plugins.lualine',
+
+  require 'plugins.dap',
+
+  require 'plugins.treesitter',
+
+  require 'plugins.oil',
 
   require 'plugins.gitsigns',
   require 'plugins.neogit',
 
   require 'plugins.toggleterm',
-  -- require 'plugins.py_interactive',
 
-  -- you can continue same window with `<space>sr` which resumes last telescope search
+  require 'plugins.dadbod',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
@@ -56,5 +61,4 @@ require('lazy').setup({
   },
 })
 
--- modeline
 -- vim: ts=2 sts=2 sw=2 et

@@ -63,12 +63,22 @@ return {
         horizontal_breakpoint = 135,
       },
     }
-    local trim_spaces = true
-    vim.keymap.set('v', '<leader>s', function()
-      require('toggleterm').send_lines_to_terminal('single_line', trim_spaces, { args = vim.v.count })
-    end)
+    local trim_spaces = false
+    vim.keymap.set('n', '<leader>cl', function()
+      local term = require 'toggleterm'
+      term.send_lines_to_terminal('single_line', trim_spaces, { args = vim.v.count })
+    end, { desc = 'Send single line' })
+
+    vim.keymap.set('v', '<leader>cs', function()
+      require('toggleterm').send_lines_to_terminal('visual_lines', trim_spaces, { args = vim.v.count })
+    end, { desc = 'Send visual lines' })
+
+    vim.keymap.set('v', '<leader>ca', function()
+      require('toggleterm').send_lines_to_terminal('visual_selection', trim_spaces, { args = vim.v.count })
+    end, { desc = 'Send visual selection' })
+
     -- Replace with these for the other two options
     -- require("toggleterm").send_lines_to_terminal("visual_lines", trim_spaces, { args = vim.v.count })
-    -- require("toggleterm").send_lines_to_terminal("visual_selection", trim_spaces, { args = vim.v.count })
+    -- require("toggleterm").send_lines_to_terminal("visual_sel"ction", trim_spaces, { args = vim.v.count })
   end,
 }

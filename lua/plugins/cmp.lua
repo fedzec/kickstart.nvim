@@ -15,9 +15,6 @@ return {
         return 'make install_jsregexp'
       end)(),
       dependencies = {
-        -- `friendly-snippets` contains a variety of premade snippets.
-        --    See the README about individual language/framework/plugin snippets:
-        --    https://github.com/rafamadriz/friendly-snippets
         {
           'rafamadriz/friendly-snippets',
           config = function()
@@ -27,9 +24,20 @@ return {
       },
     },
     'saadparwaiz1/cmp_luasnip',
-    'hrsh7th/cmp-nvim-lsp',
+
+    'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
+    'hrsh7th/cmp-cmdline',
+
+    'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-nvim-lsp-signature-help',
+    --'hrsh7th/cmp-nvim-lsp-document-symbol',
+    'petertriho/cmp-git',
+    -- ray-x/cmp-sql: 800+ SQL keywords
+    'kristijanhusak/vim-dadbod-completion',
+
+    -- 'vrslev/cmp-pypi',
+    -- 'Snikimonkd/cmp-go-pkgs',
   },
   config = function()
     -- See `:help cmp`
@@ -59,7 +67,7 @@ return {
         -- Accept ([y]es) the completion.
         --  This will auto-import if your LSP supports it.
         --  This will expand snippets if the LSP sent a snippet.
-        ['<C-y>'] = cmp.mapping.confirm { select = true },
+        ['<C-z>'] = cmp.mapping.confirm { select = true },
 
         -- Manually trigger a completion from nvim-cmp.
         --  Generally you don't need this, because nvim-cmp will display
@@ -94,11 +102,50 @@ return {
           -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
           group_index = 0,
         },
-        { name = 'nvim_lsp' },
         { name = 'luasnip' },
-        { name = 'path' },
+        { name = 'nvim_lsp' },
         { name = 'nvim_lsp_signature_help' },
+        { name = 'path' },
+        { name = 'cmdline' },
+        { name = 'vim-dadbod-completion' },
       },
     }
+
+    cmp.setup.filetype('gitcommit', {
+      sources = cmp.config.sources({
+        { name = 'git' },
+      }, {
+        { name = 'buffer' },
+      }),
+    })
+    require 'cmp_git'
+
+    -- Use buffer source for `/` and `?`
+    --[[{
+        { name = 'nvim_lsp_document_symbol' },
+      }, ]]
+    --cmp.setup.cmdline({ '/', '?' }, {
+    --  mapping = cmp.mapping.preset.cmdline(),
+    --  sources = cmp.config.sources {
+    --    { name = 'buffer' },
+    --  },
+    --})
+
+    -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+    --cmp.setup.cmdline(':', {
+    --  mapping = cmp.mapping.preset.cmdline(),
+    --  sources = cmp.config.sources({
+    --    { name = 'path' },
+    --  }, {
+    --    { name = 'cmdline' },
+    --  }),
+    --  matching = { disallow_symbol_nonprefix_matching = false },
+    --})
+
+    cmp.setup.filetype({ 'sql', 'mysql', 'plsql' }, {
+      sources = cmp.config.sources {
+        { name = 'vim-dadbod-completion' },
+      },
+    })
   end,
 }

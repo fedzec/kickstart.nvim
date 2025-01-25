@@ -1,12 +1,12 @@
 return {
   'stevearc/conform.nvim',
-  event = { 'BufWritePre' },
+  cevent = { 'BufWritePre' },
   cmd = { 'ConformInfo' },
   keys = {
     {
       '<leader>f',
       function()
-        require('conform').format { async = true, lsp_format = 'fallback' }
+        require('conform').format { async = true, lsp_format = 'fallback' } --never
       end,
       mode = '',
       desc = '[F]ormat buffer',
@@ -29,7 +29,7 @@ return {
     end,
     formatters_by_ft = {
       lua = { 'stylua' },
-      python = { 'ruff_format', 'ruff_fix', 'ruff_organize_imports' },
+      python = { 'black', 'ruff_format', 'ruff_fix', 'ruff_organize_imports' },
       -- You can use 'stop_after_first' to run the first available formatter from the list
       -- javascript = { "prettierd", "prettier", stop_after_first = true },
     },
