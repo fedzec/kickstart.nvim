@@ -134,6 +134,10 @@ return {
         --on_attach = require('lsp-format').on_attach,
       },
 
+      zls = {
+        on_attach = require('lsp-format').on_attach,
+      },
+
       lua_ls = {
         -- on_attach = require("lsp-format").on_attach,
         -- cmd = {}

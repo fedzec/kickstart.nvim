@@ -4,7 +4,7 @@ return {
     build = ':TSUpdate',
     main = 'nvim-treesitter.configs',
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'python', 'typst', 'sql' },
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'python', 'typst', 'sql', 'zig' },
       auto_install = false,
       highlight = {
         enable = true,
@@ -18,7 +18,7 @@ return {
         end,
       },
       indent = { enable = true, disable = { 'ruby' } },
-    },
+   },
   },
   --{
   --  'nvim-treesitter/nvim-treesitter-textobjects',
