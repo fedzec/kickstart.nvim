@@ -51,26 +51,11 @@ return {
       { '<leader>b', group = 'de[B]ug', mode = { 'n', 'x', 'v' } },
       { '<leader>g', group = '[G]it', mode = { 'n', 'x', 'v' } },
       { '<leader>d', group = '[D]atabase', mode = { 'n', 'x', 'v' } },
-
-      { '<leader>t', group = '[T]oggle', mode = { 'n', 'x', 'v' } },
-      { '<leader>tg', group = 'neo[G]it', mode = { 'n', 'x', 'v' } },
-      { '<leader>tt', group = '[T]erminal', mode = { 'n', 'x', 'v' } },
-
-      { '<leader>c', group = '[C]ode action', mode = { 'n', 'x', 'v' } },
+      { '<leader>t', group = '[T]erminal', mode = { 'n', 'x', 'v' } },
+      { '<leader>a', group = '[A]nnotations', mode = { 'n', 'x', 'v' } },
 
       -- <g> chains
       { 'gb', group = 'buffer', mode = { 'n', 'x', 'v' } },
-      --{ '<leader>d', group = '[D]ocument' },
-
-      --{ '<leader>b', group = '[B]uffer', mode = { 'n', 'x' } },
-      --{ '<leader>p', group = '[P]ython', mode = { 'n', 'x', 'v' } },
-      --{ '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
-      --{ '<leader>d', group = '[D]ocument' },
-      --{ '<leader>r', group = '[R]ename' },
-      --{ '<leader>s', group = '[S]earch' },
-      --{ '<leader>w', group = '[W]orkspace' },
-      --{ '<leader>t', group = '[T]oggle' },
-      --{ '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
     },
   },
 }

@@ -20,7 +20,7 @@ return {
       -- on_exit = fun(t: Terminal, job: number, exit_code: number, name: string) -- function to run when terminal process exits
       hide_numbers = true, -- hide the number column in toggleterm buffers
       autochdir = true,
-      shade_terminals = true, -- NOTE: this option takes priority over highlights specified so if you specify Normal highlights you should set this to false
+      shade_terminals = false, -- NOTE: this option takes priority over highlights specified so if you specify Normal highlights you should set this to false
       --shading_factor = '<number>', -- the percentage by which to lighten dark terminal background, default: -30
       --shading_ratio = '<number>', -- the ratio of shading factor for light/dark terminal background, default: -3
       start_in_insert = true,
@@ -63,17 +63,17 @@ return {
         horizontal_breakpoint = 135,
       },
     }
-    local trim_spaces = false
-    vim.keymap.set('n', '<leader>cl', function()
+    local trim_spaces = true
+    vim.keymap.set('n', '<leader>tl', function()
       local term = require 'toggleterm'
       term.send_lines_to_terminal('single_line', trim_spaces, { args = vim.v.count })
     end, { desc = 'Send single line' })
 
-    vim.keymap.set('v', '<leader>cs', function()
+    vim.keymap.set('v', '<leader>ts', function()
       require('toggleterm').send_lines_to_terminal('visual_lines', trim_spaces, { args = vim.v.count })
     end, { desc = 'Send visual lines' })
 
-    vim.keymap.set('v', '<leader>ca', function()
+    vim.keymap.set('v', '<leader>ta', function()
       require('toggleterm').send_lines_to_terminal('visual_selection', trim_spaces, { args = vim.v.count })
     end, { desc = 'Send visual selection' })
 

@@ -33,7 +33,8 @@ return {
     'hrsh7th/cmp-nvim-lsp-signature-help',
     --'hrsh7th/cmp-nvim-lsp-document-symbol',
     'petertriho/cmp-git',
-    -- ray-x/cmp-sql: 800+ SQL keywords
+
+    'ray-x/cmp-sql',
     'kristijanhusak/vim-dadbod-completion',
 
     -- 'vrslev/cmp-pypi',
@@ -105,6 +106,7 @@ return {
         { name = 'luasnip' },
         { name = 'nvim_lsp' },
         { name = 'nvim_lsp_signature_help' },
+        { name = 'buffer' },
         { name = 'path' },
         { name = 'cmdline' },
         { name = 'vim-dadbod-completion' },

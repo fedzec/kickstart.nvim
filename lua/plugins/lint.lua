@@ -7,7 +7,7 @@ return {
       local lint = require 'lint'
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
-        python = { 'ruff' }, --pydocstyle
+        python = { 'pylint' }, --ruff --pydocstyle
       }
       --lint.linters_by_ft['python'] = nil
 

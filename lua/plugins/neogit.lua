@@ -127,9 +127,9 @@ return {
       vim.keymap.set(mode, keys, func, { desc = desc })
     end
 
-    map('<leader>tgg', ':Neogit<CR>', 'neo[G]itStatus tab')
-    map('<leader>tgr', ':NeogitResetState<CR>', '[R]eset all popus')
-    map('<leader>tgl', ':NeogitLog<CR>', 'Neogit [L]og for current file')
-    map('<leader>tgc', ':NeogitCommit<CR>', 'Neogit [C]ommit view')
+    map('<leader>gg', ':Neogit<CR>', 'neo[G]itStatus tab')
+    map('<leader>gr', ':NeogitResetState<CR>', '[R]eset all popus')
+    map('<leader>gl', ':NeogitLog<CR>', 'Neogit [L]og for current file')
+    map('<leader>gc', ':NeogitCommit<CR>', 'Neogit [C]ommit view')
   end,
 }

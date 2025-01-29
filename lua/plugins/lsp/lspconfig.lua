@@ -2,7 +2,9 @@ return {
   -- Main LSP Configuration
   'neovim/nvim-lspconfig',
   dependencies = {
-    { 'williamboman/mason.nvim', opts = {} },
+    { 'williamboman/mason.nvim', opts = {
+      PATH = 'append',
+    } },
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     { 'j-hui/fidget.nvim', opts = {} },
@@ -152,7 +154,8 @@ return {
       'stylua',
       'black',
       'isort',
-      'ruff',
+      'pylint',
+      'pylsp',
     })
 
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }

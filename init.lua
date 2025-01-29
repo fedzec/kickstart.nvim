@@ -20,6 +20,7 @@ require('lazy').setup({
   require 'plugins.indent-blankline',
   require 'plugins.lint',
   require 'plugins.autopairs',
+  require 'plugins.neogen',
 
   require 'plugins.tokyonight',
   require 'plugins.todo-comments',
@@ -61,4 +62,5 @@ require('lazy').setup({
   },
 })
 
+-- modeline
 -- vim: ts=2 sts=2 sw=2 et

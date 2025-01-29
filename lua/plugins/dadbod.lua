@@ -12,8 +12,9 @@ return {
       'DBUILastQueryInfo',
     },
     init = function()
-      -- Your DBUI configuratdb_ui_disable_mappings_dbuiion
       vim.g.db_ui_use_nerd_fonts = 0
+      vim.g.db_ui_execute_on_save = 0
+      vim.g.db_ui_debug = 1
       local map = function(keys, func, desc, mode)
         mode = mode or 'n'
         vim.keymap.set(mode, keys, func, { desc = 'Database: ' .. desc })
