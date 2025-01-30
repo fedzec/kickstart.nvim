@@ -22,7 +22,7 @@ require('lazy').setup({
   require 'plugins.autopairs',
   require 'plugins.neogen',
 
-  require 'plugins.tokyonight',
+  require 'plugins.colorscheme',
   require 'plugins.todo-comments',
 
   require 'plugins.mini',
