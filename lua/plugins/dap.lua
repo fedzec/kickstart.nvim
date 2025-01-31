@@ -64,7 +64,7 @@ return {
       desc = 'Debug: See last session result.',
     },
     { '<leader>br', ':DapToggleRepl<CR>', desc = 'Debug: toggle [R]epl.' },
-    { '<leader>bq', ':DapToggleRepl<CR>', desc = 'Debug: quit current session.' },
+    { '<leader>bq', ':DapTerminate<CR>', desc = 'Debug: quit current session.' },
   },
   config = function()
     local dap = require 'dap'
@@ -121,6 +121,18 @@ return {
     }
 
     require('dap-python').setup 'python'
+    dap.configurations.python = {
+      {
+        name = 'Launch from nvim gcwd',
+        type = 'python',
+        request = 'launch',
+        program = '${file}',
+        cwd = vim.fn.getcwd(),
+        env = {
+          PYTHONPATH = vim.fn.getcwd(),
+        },
+      },
+    }
 
     dap.adapters.lldb = {
       type = 'executable',
