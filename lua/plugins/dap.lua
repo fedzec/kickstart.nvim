@@ -140,16 +140,23 @@ return {
       name = 'lldb',
     }
 
-    local get_base_cwd = function()
-      return vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
-    end
+    dap.configurations.c = {
+      {
+        name = 'Launch',
+        type = 'lldb',
+        request = 'launch',
+        program = vim.fn.getcwd() .. '/main',
+        cwd = vim.fn.getcwd(),
+        stopOnEntry = false,
+      },
+    }
 
     dap.configurations.zig = {
       {
         name = 'Launch',
         type = 'lldb',
         request = 'launch',
-        program = vim.fn.getcwd() .. '/zig-out/bin/' .. get_base_cwd(),
+        program = vim.fn.getcwd() .. '/zig-out/bin/' .. vim.fn.fnamemodify(vim.fn.getcwd(), ':t'),
         cwd = vim.fn.getcwd(),
         stopOnEntry = false,
         args = {},

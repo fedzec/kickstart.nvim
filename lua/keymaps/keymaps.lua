@@ -10,6 +10,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', 'gbd', ':cd %:p:h<CR>', { desc = 'Change to [B]uffer [D]irectory' })
 vim.keymap.set('n', 'gbq', ':b#|bd#<CR>', { desc = '[Q]uit current [B]uffer, switch to the previous' })
 
+vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = '[W]rite current buffer' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
