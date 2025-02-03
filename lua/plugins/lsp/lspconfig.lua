@@ -2,9 +2,12 @@ return {
   -- Main LSP Configuration
   'neovim/nvim-lspconfig',
   dependencies = {
-    { 'williamboman/mason.nvim', opts = {
-      PATH = 'append',
-    } },
+    {
+      'williamboman/mason.nvim',
+      opts = {
+        PATH = 'append',
+      },
+    },
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     { 'j-hui/fidget.nvim', opts = {} },
@@ -113,20 +116,21 @@ return {
     local servers = {
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
       pylsp = {
+        on_attach = require('lsp-format').on_attach,
         settings = {
           pylsp = {
             plugins = {
-              yapf = {
-                enabled = false,
-              },
-              autopep8 = {
-                enabled = false,
-              },
-              pyflakes = {
-                enabled = true,
-              },
+              --yapf = {
+              --  enabled = false,
+              --},
+              --autopep8 = {
+              --  enabled = false,
+              --},
+              --pyflakes = {
+              --  enabled = true,
+              --},
               pylint = {
-                enabled = false,
+                enabled = true,
               },
             },
           },
@@ -162,8 +166,6 @@ return {
       'stylua',
       'black',
       'isort',
-      'pylint',
-      'pylsp',
     })
 
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }

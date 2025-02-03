@@ -20,7 +20,7 @@ return {
       if disable_filetypes[vim.bo[bufnr].filetype] then
         lsp_format_opt = 'never'
       else
-        lsp_format_opt = 'fallback'
+        lsp_format_opt = 'last' --fallback'
       end
       return {
         timeout_ms = 500,
