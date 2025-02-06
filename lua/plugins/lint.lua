@@ -7,10 +7,8 @@ return {
       local lint = require 'lint'
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
-        --python = { 'pylint' }, --ruff --pydocstyle
       }
-      lint.linters_by_ft['python'] = nil
-
+      -- lint.linters_by_ft['python'] = nil
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
       -- instead set linters_by_ft like this:
       -- lint.linters_by_ft = lint.linters_by_ft or {}
